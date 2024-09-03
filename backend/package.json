@@ -1,0 +1,24 @@
+{
+  "name": "simple-ecommerce-dashboard",
+  "version": "1.0.0",
+  "description": "Simple e-commerce dashboard using React and Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harsh-a-parihar/Simple_E-commerce_dashboard.git"
+  },
+  "author": "harsh-a-parihar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harsh-a-parihar/Simple_E-commerce_dashboard/issues"
+  },
+  "homepage": "https://github.com/harsh-a-parihar/Simple_E-commerce_dashboard#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.6.0",
+    "nodemon": "^3.1.4"
+  }
+}
