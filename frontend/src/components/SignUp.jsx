@@ -18,7 +18,7 @@ const SignupPage = () => {
         event.preventDefault(); // Prevent the default form submission
         console.log(name, email, password);
         try {
-            let response = await fetch("http://localhost:4000/signup", {
+            let response = await fetch("http://localhost:5001/signup", {
                 method: 'POST',
                 body: JSON.stringify({ name, email, password }),
                 headers: {

@@ -16,7 +16,7 @@ const LoginPage = () => {
     event.preventDefault();
     console.log(email, password);
     try {
-      let result = await fetch("http://localhost:4000/login", {
+      let result = await fetch("http://localhost:5001/login", {
         method: "POST",
         body: JSON.stringify({email, password}),
         headers: {

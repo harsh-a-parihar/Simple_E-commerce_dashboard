@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 require("./db/config");
-const User = require('./db/Users');
+const User = require('./db/User');
+const Product = require('./db/Product');
 const app = express();
 
 
@@ -43,7 +44,18 @@ app.post("/login", async (req, resp) => {
     }
 });
 
+app.post("/add", async (req, resp) => {
+    try {
+        let product = new Product(req.body);
+        let result = await product.save();
+        resp.status(201).json({ message: 'Product added successfully', product });
+        resp.send(result);
+
+    } catch (error) {
+        console.error("Error saving user:", error);
+        resp.status(500).json({ message: 'Failed to add product' });
+    }
+})
 
 
-
-app.listen(4000);
+app.listen(5001);
