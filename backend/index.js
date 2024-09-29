@@ -57,5 +57,18 @@ app.post("/add", async (req, resp) => {
     }
 })
 
+app.get("/products", async (req, resp) => {
+    try {
+        let products = await Product.find();
+        if (products.length>0) {
+            resp.send(products)
+        } else {
+            resp.send({result:"No Products found"})
+        }
+    } catch (error) {
+        console.error("Error listing products:", error);
+        resp.status(500).json({ message: 'Failed to list product' });
+    }
+})
 
 app.listen(5001);
