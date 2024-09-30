@@ -49,7 +49,7 @@ app.post("/add", async (req, resp) => {
         let product = new Product(req.body);
         let result = await product.save();
         resp.status(201).json({ message: 'Product added successfully', product });
-        resp.send(result);
+        // resp.send(result);
 
     } catch (error) {
         console.error("Error saving user:", error);
@@ -70,5 +70,10 @@ app.get("/products", async (req, resp) => {
         resp.status(500).json({ message: 'Failed to list product' });
     }
 })
+
+app.delete("/products/:id", async (req, resp) => {
+    const result = await Product.deleteOne({_id:req.params.id})
+    resp.send(result);
+});
 
 app.listen(5001);
